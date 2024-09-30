@@ -1,9 +1,6 @@
-# Project Title
+# Full stack example with Ionic + Express + Sequelize + MySQL
 
-One Paragraph of the project description
-
-Initially appeared on
-[gist](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2). But the page cannot open anymore so that is why I have moved it here.
+It's just that: A full stack example with Ionic + Express + Sequelize + MySQL
 
 ## Getting Started
 
@@ -13,82 +10,82 @@ for notes on deploying the project on a live system.
 
 ### Prerequisites
 
-Requirements for the software and other tools to build, test and push
+You need a working environment with:
 
-- [Example 1](https://www.example.com)
-- [Example 2](https://www.example.com)
+- [Git](https://git-scm.com) - You can install it from https://git-scm.com/downloads.
+- [MySQL](https://www.mysql.com) - You can install it from https://www.mysql.com/downloads/.
+- [Node.js](https://nodejs.org) - Install node.js from https://nodejs.org/es/download/. It's advisable to install the LTS version.
 
-### Installing
+## General Installation instructions
 
-A step by step series of examples that tell you how to get a development
-environment running
+The best option to start with this project is cloning it in your PC:
 
-Say what the step will be
+```
+git clone https://github.com/tcrurav/BicyclesIonicExpressSequelize.git
+```
 
-    Give the example
+This project contains 2 different parts:
 
-And repeat
+- Frontend
+- Backend
 
-    until finished
+You need a node.js working environment. The LTS is recommended: https://nodejs.org/es/
 
-End with an example of getting some data out of the system or using it
-for a little demo
+Once you have cloned the project install all dependencies.
 
-## Running the tests
+```
+cd Bicycles/frontend
+npm install
 
-Explain how to run the automated tests for this system
+cd Bicycles/backend
+npm install
+```
 
-### Sample Tests
+- For your backend part:
 
-Explain what these tests test and why
+1. You need a Bicycles/backend/db.config.js file with the data for the connection to your MySQL Server:
 
-    Give an example
+```
+module.exports = {
+  HOST: "localhost",
+  USER: "root",
+  PASSWORD: "your password",
+  DB: "db_bicycles",
+  dialect: "mysql",
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
+  }
+}
+```
 
-### Style test
+2. You need a mysql server working.
 
-Checks if the best practices and the right coding style has been used.
+3. Create the mysql database, that in our case is "db_bicycles".
 
-    Give an example
+Finally to start enjoying this project.
 
-## Deployment
+```
+cd Bicycles/backend
+node index.js
 
-Add additional notes to deploy this on a live system
+cd Bicycles/frontend
+ionic serve
+```
+
+Enjoy!!!
 
 ## Built With
 
-- [Contributor Covenant](https://www.contributor-covenant.org/) - Used
-  for the Code of Conduct
-- [Creative Commons](https://creativecommons.org/) - Used to choose
-  the license
-
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code
-of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [Semantic Versioning](http://semver.org/) for versioning. For the versions
-available, see the [tags on this
-repository](https://github.com/PurpleBooth/a-good-readme-template/tags).
-
-## Authors
-
-- **Billie Thompson** - _Provided README Template_ -
-  [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of
-[contributors](https://github.com/PurpleBooth/a-good-readme-template/contributors)
-who participated in this project.
-
-## License
-
-This project is licensed under the [CC0 1.0 Universal](LICENSE.md)
-Creative Commons License - see the [LICENSE.md](LICENSE.md) file for
-details
+- [Visual Studio Code](https://code.visualstudio.com/) - The Editor used in this project
+- [Node.js](https://nodejs.org/) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+- [sequelize](https://sequelize.org/) - Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server. It features solid transaction support, relations, eager and lazy loading, read replication and more.
+- [express](https://expressjs.com/) - Fast, unopinionated, minimalist web framework for Node.js.
+- [MySQL Workbench](https://www.mysql.com/products/workbench/) - MySQL Workbench is a unified visual tool for database architects, developers, and DBAs.
+- [dotenv](https://www.npmjs.com/package/dotenv) - Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code is used
-- Inspiration
-- etc
+- https://gist.github.com/PurpleBooth/109311bb0361f32d87a2. A very complete template for README.md files.
